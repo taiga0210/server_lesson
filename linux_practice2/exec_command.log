@@ -1,0 +1,253 @@
+    1  sudo yum -y groupinstall "development tools"
+    2  sudo yum -y install epel-release wget
+    3  sudo wget http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
+    4  sudo rpm -Uvh remi-release-7.rpm
+    5  sudo yum -y install --enablerepo=remi-php72 php php-pdo php-mysqlnd php-mbstring php-xml php-fpm php-common php-devel php-mysql unzip
+    6  php -v
+    7  sudo yum -y install --enablerepo=remi-php72 php php-pdo php-mysqlnd php-mbstring php-xml php-fpm php-common php-devel php-mysql unzip
+    8  php -v
+    9  php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+   10  php composer-setup.php
+   11  php -r "unlink('composer-setup.php');"
+   12  sudo mv composer.phar /usr/local/bin/composer
+   13  composer -v
+   14  exit
+   15  ls /
+   16  ls /usr
+   17  cd /vagrant
+   18  pwd
+   19  cd usr
+   20  pwd
+   21  mkdir server_lesson && cd server_lesson
+   22  git init
+   23  touch first.txt
+   24  cd /vagrant
+   25  mkdir server_lesson/linux_practice/public
+   26  mkdir -p server_lesson/linux_practice/public
+   27  ls server_lesson server_lesson/linux_practice
+   28  touch server_lesson/linux_practice/public/index.php
+   29  ls server_lesson/linux_practice/public
+   30  cd /vagrant/server_lesson && ls
+   31  cd ..
+   32  cd server_lesson
+   33  cd linux_practice
+   34  cd public
+   35  cp index.php index_bk.php
+   36  ls
+   37  cd ..
+   38  cp -r public tmp
+   39  ls ./ public tmp
+   40  cd /vagrant
+   41  mv server_lesson/linux_practice server_lesson/linux_practice1
+   42  mkdir linux_practice2 linux_practice3
+   43  mv ./linux_practice2 ./server_lesson
+   44  cd /vagrant/server_lesson/linux_practice1/tmp/
+   45  rm *_bk.php
+   46  cd /vagrant
+   47  rm server_lesson/first.txt
+   48  rm -r linux_practice3
+   49  ls server_lesson
+   50  cd server_lesson
+   51  echo '# サーバレッスン' > README.md
+   52  echo 'Linuxプラクティス' >> README.md
+   53  echo '-----------------' >> README.md
+   54  cat README.md
+   55  vi README.md
+   56  ls server_lesson
+   57  ls ./
+   58  ls server_lesson/linux_practice1
+   59  ls /vagrant/serverlesson/linux_practice1
+   60  ls linux_practice1
+   61  exit
+   62  ls /
+   63  cd /vagrant
+   64  ls /vagrant
+   65  cd server_lesson
+   66  vi README.md
+   67  ls /
+   68  ls ./
+   69  git status
+   70  git add .
+   71  git status
+   72  git commit -m 'first commit'
+   73  git status
+   74  git remote -v
+   75  git remote add origin https://github.com/taiga0210/server_lesson.git
+   76  git remote -v
+   77  git push origin master
+   78  cd /vagrant
+   79  cd server_lesson
+   80  cd linux_practice2
+   81  mkdir documents
+   82  cd documents
+   83  touch gizumo{01..50}.md
+   84  ls ./
+   85  git add .
+   86  git commit -m 'documentsディレクトリ作成と50個のファイル作成'
+   87  cd ../
+   88  mkdir trash
+   89  ls ./
+   90  mv documents/gizumo2?.md trash
+   91  cd trash
+   92  cd ../
+   93  ls trash
+   94  mv documents/gizumo3?.md trash
+   95  mv documents/gizumo4?.md trash
+   96  ls trash
+   97  mv trash/gizumo4?.md documents
+   98  mv documents/gizumo40.md trash
+   99  ls trash
+  100  git add .
+  101  git commit -m 'trashディレクトリの作成とgizumo20-40.mdファイルの移動'
+  102  touch .gitignore
+  103  ls ./
+  104  vi .gitignore
+  105  git add .
+  106  git commit -m '.gitignoreファイルの作成'
+  107  vi .gitignore
+  108  git add .
+  109  git commit -m '.gitignoreファイルの編集'
+  110  history 300 >> exec_command.log
+  111  ls ./
+  112  vi exec_command.log
+  113  rm exec_command.log
+  114  ls ./
+  115  histoory 300
+  116  history 300
+  117  history 300 >> exec_command.log
+  118  vi exec_command.log
+  119  rm exec_command.log
+  120  history 300 -w exec_command.log
+  121  ls ./
+  122  touch exec_command.log
+  123  history 300 -w exec_command.log
+  124  ls ./
+  125  rm exec_command.log
+  126  vi exec_command.log
+  127  ls ./
+  128  git add .
+  129  git commit -m 'exec_command.logファイルを作成し編集'
+  130  git push origin master
+  131  vi .gitignore
+  132  git add .
+  133  git commit -m '.gitignoreファイルを編集'
+  134  git push origin master
+  135  git rm --cached /trash/gizumo2?.md
+  136  git rm --cached trash/gizumo2?.md
+  137  vi .gitignore
+  138  ls trash
+  139  git add .
+  140  git commit -m '.gitignoreファイルを編集とgizumo2?ファイルの管理対象から外す'
+  141  vi .gitignore
+  142  git add .
+  143  git commit -m '.gitignoreファイルの編集'
+  144  exit
+  145  cd server_lesson
+  146  cd vagrant/server_lesson
+  147  cd /vagrant/server_lesson
+  148  ls ./
+  149  vi README.md
+  150  ls /linux_practice2
+  151  ls linux_practice2
+  152  ls linux_practice2/trash
+  153  cd linux_practice2/trash
+  154  rm gizumo2?.md
+  155  ls ./
+  156  git add .
+  157  git commit -m 'trash内でrm gizumo2?.mdを実行'
+  158  git staus
+  159  git status
+  160  cd linux_practice2
+  161  cd server_lesson
+  162  cd linux_practice2
+  163  cd ../
+  164  git status
+  165  git push origin master
+  166  git status
+  167  cd linux_practice2/trash
+  168  touch gizumo{20..29}.md
+  169  ls ./
+  170  cd ../
+  171  git add .
+  172  cd linux_practice2/trash
+  173  touch test.md
+  174  ls ./
+  175  cd ../
+  176  git add .
+  177  cd linux_practice2/trash
+  178  rm test.md
+  179  ls /
+  180  ls ./
+  181  cd ../
+  182  git add .
+  183  git commit -m '対象外かのテストプッシュ'
+  184  git push origin master
+  185  cd linux_practice2/trash
+  186  ls ./
+  187  git status
+  188  cd ../
+  189  rm -rf .git/
+  190  ls ./
+  191  cd ../
+  192  rm server_lesson
+  193  rm -rf server_lesson
+  194  ls ./
+  195  mkdir server_lesson
+  196  cd server_lesson
+  197  git init
+  198  ls ./
+  199  touch first.txt
+  200  cd /vagrant
+  201  mkdir server_lesson/linux_practice/public
+  202  mkdir -p server_lesson/linux_practice/public
+  203  ls server_lesson/linux_practice
+  204  touch server_lesson/linux_practice/public/index.php
+  205  ls server_lesson/linux_practice/public
+  206  cd /vagrant/server_lesson && ls
+  207  cd server_lesson/linux_practice/public
+  208  cd /vagrant/server_lesson/linux_practice/public
+  209  cp index.php index_bk.php
+  210  ls
+  211  cd ../
+  212  cp -r public tmp
+  213  ls ./ public tmp
+  214  cd /vagrant
+  215  mv server_lesson/linux_practice server_lesson/linux_practice1
+  216  mkdir linux_practice2 linux_practice3
+  217  mv ./linux_practice2 ./server_lesson
+  218  cd /vagrant/server_lesson/linux_practice1/tmp/
+  219  rm *_bk.php
+  220  cd vagrant
+  221  cd /vagrant
+  222  rm server_lesson/first.txt
+  223  rm -r linux_practice3
+  224  ls server_lesson
+  225  cd server_lesson
+  226  echo '# サーバレッスン' > README.md
+  227  echo 'Linuxプラクティス' >> README.md
+  228  echo '------------------' >> README.md
+  229  cat README.md
+  230  vi README.md
+  231  git add .
+  232  git commit -m '課題１の作成'
+  233  git remote add origin https://github.com/taiga0210/server_lesson.git
+  234  git remote -v
+  235  git push origin master
+  236  cd linux_practice2
+  237  mkdir documents
+  238  cd documents
+  239  touch gizumo{01..50}.md
+  240  ls ./
+  241  cd ../
+  242  mkdir trash
+  243  mv /documents/gizumo2?.md /trash
+  244  mv documents/gizumo2?.md trash
+  245  ls trash documents
+  246  mv documents/gizumo3?.md trash
+  247  mv documents/gizumo4?.md trash
+  248  mv trash/gizumo4?.md documents
+  249  mv documents/gizumo40.md trash
+  250  ls trash documents
+  251  touch .gitignore
+  252  vi .gitignore
+  253  history 300 > exec_command.log
